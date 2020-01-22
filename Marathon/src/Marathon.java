@@ -15,12 +15,12 @@ public class Marathon {
 		
 		Marathon M1 = new Marathon();
 		
-		int fastestIndex = M1.findFastest(names, times);
+		int fastestIndex = M1.findFastest(times);
 		System.out.printf("%s was fastest with a time of %d seconds", names[fastestIndex], times[fastestIndex]);
 
 	}
 	
-	public int findFastest(String[] names, int[] times) 
+	public int findFastest(int[] times) 
 	{
 		int index = 0;
 		int fastest = 1000;
