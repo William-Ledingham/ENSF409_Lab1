@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class MultiDimensionalArray {
 
 	char[][] sentences = new char[3][60];
+	int[] sentenceLength = new int[3];
 	
 	public void readSentences()
 	{
@@ -14,30 +15,43 @@ public class MultiDimensionalArray {
 		String secondSentence = scan.nextLine();
 		System.out.printf("Enter third sentence: ");
 		String thirdSentence = scan.nextLine();
+		scan.close();
+		
+		sentenceLength[0] = firstSentence.length();
+		sentenceLength[1] = secondSentence.length();
+		sentenceLength[2] = thirdSentence.length();
 		
 		for(int i = 0; i < firstSentence.length(); i++)
 		{
 			sentences[0][i] = firstSentence.charAt(firstSentence.length() - 1 - i);
 		}
 		
+		int wordLength = 1;
+		int newSentenceIndex = 0;
 		for(int i = secondSentence.length() - 1; i >= 0; i--)
 		{
-			if(secondSentence.charAt(i) == ' ')
+			if(secondSentence.charAt(i) == ' ' || i == 0)
 			{
-				int j = 0;
-				while(secondSentence.charAt(i + 1) != ' ' || i + 1 > secondSentence.length() - 1 )
+				
+				for(int j = 0; j < wordLength-1; j++)
 				{
-					sentences[1][j] = secondSentence.charAt(i + 1);
-					j++;
+					if(i == 0)
+						sentences[1][newSentenceIndex] = secondSentence.charAt(i + j);
+					else
+						sentences[1][newSentenceIndex] = secondSentence.charAt(i + j + 1);
+					newSentenceIndex++;
 				}
-				sentences[1][j] = ' ';
+				sentences[1][newSentenceIndex] = ' ';
+				newSentenceIndex++;
+				wordLength = 0;
 			}
+			wordLength++;
 		}
 		
 		for(int i = 0; i < thirdSentence.length(); i++)
 		{
 			sentences[2][i] = thirdSentence.charAt(i);
-			if(thirdSentence.charAt(i) % 5 == 0)
+			if(i % 5 == 0)
 			{
 				sentences[2][i] = Character.toUpperCase(sentences[2][i]);
 			}
@@ -50,11 +64,11 @@ public class MultiDimensionalArray {
 	{
 		for(int i = 0; i < 3; i++)
 		{
-			for(int j = 0; j < 60; j++)
+			for(int j = 0; j < sentenceLength[i]; j++)
 			{
-				System.out.println(sentences[i][j]);
+				System.out.print(sentences[i][j]);
 			}
-			System.out.println("\n");
+			System.out.println();
 		}
 	}
 	
