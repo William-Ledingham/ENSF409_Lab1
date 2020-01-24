@@ -1,3 +1,5 @@
+//William Ledingham
+//Lab 1 - Exercise 2
 
 public class Marathon {
 
@@ -22,17 +24,15 @@ public class Marathon {
 	
 	public int findFastest(int[] times) 
 	{
-		int index = 0;
-		int fastest = 1000;
+		int fastest = times[0];
 		int fastestIndex = 0;
-		while(index < times.length)
+		for(int index = 1; index < times.length; index++)
 		{
 			if(times[index] < fastest)
 			{
 				fastest = times[index];
 				fastestIndex = index;
 			}
-			index++;
 		}
 		return fastestIndex;
 	}

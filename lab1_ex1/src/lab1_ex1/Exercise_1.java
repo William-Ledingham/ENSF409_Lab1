@@ -1,6 +1,9 @@
+//William Ledingham
+//Lab 1 - Exercise 1s
+
 package lab1_ex1;
 
-public class Main {
+public class Exercise_1 {
 
 	public static void main(String[] args) {
 		
