@@ -16,7 +16,7 @@ public class Marathon {
 		Marathon M1 = new Marathon();
 		
 		int fastestIndex = M1.findFastest(times);
-		System.out.printf("%s was fastest with a time of %d seconds", names[fastestIndex], times[fastestIndex]);
+		System.out.printf("%s was fastest with a time of %d", names[fastestIndex], times[fastestIndex]);
 
 	}
 	
