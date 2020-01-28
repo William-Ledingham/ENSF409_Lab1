@@ -1,27 +1,70 @@
 package lab1_ex7;
 
+
+/**
+ * Implementation of a simple linked list.
+ * 
+ * Has functionality to get, set, add, and remove any node.
+ * 
+ * @author William Ledingham
+ * @version 1.0
+ * @since 2020-01-27
+ *
+ */
 public class SimpleList {
 
+	/**
+	 * Node of a linked list.
+	 * Holds an integer item and the next Node. 
+	 * @author William Ledingham
+	 * @version 1.0
+	 * @since 2020-01-27
+	 */
 	private class Node {
+		/**
+		 * Integer item of the node.
+		 */
 		int item;
+		/**
+		 * Node object that is next in the linked list.
+		 */
 		Node next;
 	}
 	
+	/**
+	 * Node at the start of the linked list. 
+	 */
 	private Node headM;
+	/**
+	 * Number of nodes in the linked list.
+	 */
 	private int sizeM;
 	
-	
+	/**
+	 * Constructs an empty linked list with no nodes.
+	 * 
+	 * headM = null; sizeM = 0;
+	 */
 	public SimpleList() 
 	{
 		headM = null;
 		sizeM = 0;
 	}
 	
-	public int size()
+	/**
+	 * Returns the number of nodes in the linked list.
+	 * 
+	 * @return Number of nodes.
+	 */
+	public int getSize()
 	{
 		return sizeM;
 	}
 	
+	/**
+	 * Inserts a new node at the end of the linked list. 
+	 * @param item the new node's item value.
+	 */
 	public void pushBack(int item)
 	{
 		Node newNode = new Node();
@@ -51,6 +94,10 @@ public class SimpleList {
 		sizeM++;
 	}
 	
+	/**
+	 * Inserts a new node at the start of the linked list. 
+	 * @param item the new node's item value.
+	 */
 	public void pushFront(int item)
 	{
 		Node newNode = new Node();
@@ -60,12 +107,12 @@ public class SimpleList {
 		sizeM++;
 	}
 	
-	public void popBack(int item)
-	{
-		
-	}
-	
-	public int get(int n)
+	/**
+	 * Returns the item value at the specified node. 
+	 * @param n the index of the node.
+	 * @return item of the nth node.
+	 */
+	public int getNode(int n)
 	{
 		if(n < 0 || n >= sizeM)
 		{
@@ -81,7 +128,12 @@ public class SimpleList {
 		return p.item;
 	}
 	
-	public void set(int n, int v)
+	/**
+	 * Sets the item value at the specified node. 
+	 * @param n the index of the node.
+	 * @param v the item value to be change to.
+	 */
+	public void setNode(int n, int v)
 	{
 		if(n < 0 || n >= sizeM)
 		{
@@ -93,12 +145,15 @@ public class SimpleList {
 		for(int i = 0; i < n; i++)
 		{
 			p = p.next;
-		}
-		
-		p.item = v;
-		
+		}	
+		p.item = v;		
 	}
 	
+	/**
+	 * Inserts a new node at any specified position in the linked list. 
+	 * @param itemA the new item value.
+	 * @param n the index of the new node to be inserted.
+	 */
 	public void insert(int itemA, int n)
 	{
 		if(n < 0 || n > sizeM)
@@ -138,6 +193,10 @@ public class SimpleList {
 		}
 	}
 	
+	/**
+	 * Removes the node at a specified index. 
+	 * @param n the index of the specified node. 
+	 */
 	public void remove(int n)
 	{
 	    if (headM == null || n < 0 || n >= sizeM)
@@ -167,13 +226,19 @@ public class SimpleList {
 	    }
 	    sizeM--;
 	}
-	
+	/**
+	 * Removes all nodes from linked list and sets size to zero. 
+	 */
 	public void clear()
 	{
 		headM = null;
 		sizeM = 0;
 	}
 	
+	/**
+	 * Prints all of the item values in the linked list.
+	 * Does so in increasing index position.
+	 */
 	public void print()
 	{	
 		if(headM != null)
@@ -188,6 +253,11 @@ public class SimpleList {
 		
 	}
 	
+	/**
+	 * Main function of program.
+	 * Runs through testing the of the linked list class.
+	 * @param args default
+	 */
 	public static void main(String[] args) 
 	{
 		SimpleList list = new SimpleList();
@@ -200,7 +270,7 @@ public class SimpleList {
 	    
 	    list.pushBack(440);
 	    
-	    list.set(0,770);
+	    list.setNode(0,770);
 	    System.out.printf("\nAfter calling push_back and set function list must have: 770  440\n");
 	    list.print();
 	    
