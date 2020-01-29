@@ -1,6 +1,12 @@
 package lab1_ex4;
 import java.util.Scanner;
 
+/**
+ * ENSF 409 Lab 1 Exercise 4
+ * 
+ * @author William Ledingham
+ * @since 2020-01-28
+ */
 public class MultiDimensionalArray {
 
 	char[][] sentences = new char[3][60];
@@ -32,6 +38,8 @@ public class MultiDimensionalArray {
 		{
 			if(secondSentence.charAt(i) == ' ' || i == 0)
 			{
+				if(i == 0)
+					wordLength++;
 				
 				for(int j = 0; j < wordLength-1; j++)
 				{
@@ -41,7 +49,7 @@ public class MultiDimensionalArray {
 						sentences[1][newSentenceIndex] = secondSentence.charAt(i + j + 1);
 					newSentenceIndex++;
 				}
-				sentences[1][newSentenceIndex] = ' ';
+				sentences[1][newSentenceIndex] = ' ';	
 				newSentenceIndex++;
 				wordLength = 0;
 			}

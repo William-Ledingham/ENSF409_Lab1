@@ -6,6 +6,8 @@ package lab1_ex7;
  * 
  * Has functionality to get, set, add, and remove any node.
  * 
+ * ENSF 409 Lab 1 Exercise 7
+ * 
  * @author William Ledingham
  * @version 1.0
  * @since 2020-01-27
@@ -68,11 +70,6 @@ public class SimpleList {
 	public void pushBack(int item)
 	{
 		Node newNode = new Node();
-		if(newNode == null)
-		{
-	        System.out.printf("\nNo memory available to create a node\n");
-	        System.exit(1);
-		}
 		
 		newNode.item = item;
 		
@@ -171,11 +168,7 @@ public class SimpleList {
 		else
 		{
 			Node newNode = new Node();
-			if(newNode == null)
-			{
-				System.out.println("Sorry memory is unavailable to create a new node.\n");
-				return;
-			}
+
 			newNode.item = itemA;
 			
 			Node before = headM;

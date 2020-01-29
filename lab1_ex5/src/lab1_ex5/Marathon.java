@@ -1,6 +1,13 @@
 package lab1_ex5;
 import java.util.*;
 
+
+/**
+ * ENSF 409 Lab 1 Exercise 5
+ * 
+ * @author William Ledingham
+ * @since 2020-01-28
+ */
 public class Marathon {
 
 	public static void main(String[] args) {

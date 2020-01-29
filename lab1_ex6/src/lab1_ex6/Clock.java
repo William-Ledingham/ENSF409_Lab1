@@ -1,6 +1,12 @@
 package lab1_ex6;
 
-
+/**
+ * ENSF 409 Lab 1 Exercise 6
+ * 
+ * @author William Ledingham
+ * @since 2020-01-28
+ *
+ */
 public class Clock {
 
 	private int day, hour, minute, second;

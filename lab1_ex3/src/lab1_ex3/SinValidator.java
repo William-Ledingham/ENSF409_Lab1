@@ -1,7 +1,12 @@
 package lab1_ex3;
 import java.util.Scanner;
 
-
+/**
+ * ENSF 409 Lab 1 Exercise 3
+ * 
+ * @author William Ledingham
+ * @since 2020-01-28
+ */
 public class SinValidator {
 
 private int[] SIN;
